@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="QuizApp">
+    <head>
+        <title>Quiz App</title>
+        <meta charset="utf-8">
+        <script src="angular.js"></script>
+		<script src="app.js"></script>		
+    </head>
+    <body>
+        <h1>Take this short quiz and then see how you did!</h1>
+        <div ng-controller="QuizController as qc">
+            <h2>List of your previous answers:</h2>
+            <ul ng-if="qc.userAnswers != null">
+                <li ng-repeat="answer in qc.userAnswers"
+                    id="answer{{$index}}">
+                    {{answer.answer1}} ({{answer.grade1}})<br />
+                    {{answer.answer2}} ({{answer.grade2}})<br />
+                    {{answer.answer3}} ({{answer.grade3}})<br />
+                    {{answer.answer4}} ({{answer.grade4}})
+                    [<label for="remove">Clear Answers</label>
+		             <input name="remove" type="checkbox"  ng-click="qc.remove($index)">]
+                </li>
+            </ul>
+            <br />
+            <br />
+            <p>Question 1: {{qc.question1}}</p>
+            Answer 1: <input name="userAnswer1" type="text" ng-model="qc.userAnswer1" />
+            
+            <p>Question 2: {{qc.question2}}</p>
+            Answer 2: <input name="userAnswer2" type="text" ng-model="qc.userAnswer2" />
+            
+            <p>Question 3: {{qc.question3}}</p>
+            Answer 3: <input name="userAnswer3" type="text" ng-model="qc.userAnswer3" />
+            
+            <p>Question 4: {{qc.question4}}</p>
+            Answer 4: <input name="userAnswer4" type="text" ng-model="qc.userAnswer4" />
+            <br />
+            
+            <input type="button" value="Store Answers and Grade" ng-click="qc.update(qc.userAnswer1, qc.userAnswer2, qc.userAnswer3, qc.userAnswer4)"/>
+            
+            
+        </div>
+        
+    </body>
+</html>

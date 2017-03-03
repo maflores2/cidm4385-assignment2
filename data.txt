@@ -1,0 +1,14 @@
+{
+    "questions":{
+      "question1":"Who is the 45th President of the United States?",
+      "question2":"What year did Colombus discover America?",
+      "question3":"How many oxygen atoms are in a molecule of water?",
+      "question4":"What is the tallest building in the world?"
+},
+    "answers":{
+      "answer1":"Donald Trump",
+      "answer2":"1492",
+      "answer3":"2",
+      "answer4":"Burj Khalifa"
+    }
+}
